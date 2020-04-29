@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap');
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Quicksand', sans-serif;
+   margin: 0;
+   padding: 0;
+   overflow-x: hidden;
+}
+
+main {
+   padding: 20px;
+   overflow: auto;
+}
+
+#content {
+   float: left;
+   width: 75%;
+}
+
+aside {
+   float: right;
+   width: 25%;
+   padding-left: 20px;
+}
+
+h2 {
+   text-align: center;
+}
+ 
+hr {
+   width: 250px;
+   border-top: 3px solid #999;
+}
+
+.thumbnail {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+.featured-thumbnail {
+   margin: 4px;
+   width: 240px;
+   height: 160px;
+   object-fit: cover;
+   object-position: center;
+}
+
+h2 {
+   color: #00a2c6
+}
+ 
+h3 {
+   color: #00a2c6
+}
+ 
+footer {
+   padding: 5px;
+   color: white;
+   background-color: #00a2c6;
+   text-align: center;
+   font-weight: bold;
+}
+
+nav {
+   display: flex;
+   justify-content: space-around;
+   background-color: #00a2c6;
+   height: 50px;
+   align-items: center;
+   color: white;
+}
+
+nav .logo {
+   font-family: 'Pacifico', cursive;
+   letter-spacing: 5px;
+}
+
+nav ul {
+   display: flex;
+   list-style: none;
+   width: 20%;
+   justify-content: space-between;
+}
+
+nav ul li a {
+   color: white;
+   font-size: 18px;
+   font-weight: 400;
+   text-decoration: none;
+}
+
+nav ul li a:hover {
+   color: gray;
+   font-weight: bold;
+}
+
+.profile header {
+   text-align: center;
+}
+
+.profile section {
+   text-align: center;
+}
+
+.profile section p {
+   font-style: italic;
+}
+
+.profile img {
+   width: 200px;
+}
+
+#about p {
+   text-align: center;
+   letter-spacing: 3px;
+}
+
+#contact p {
+   text-align: center;
+   letter-spacing: 3px;
+}
+
+.featured-image {
+    width: 100%;
+   max-height: 300px;
+   object-fit: cover;
+   object-position: center;
+}
+
+.card {
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+   border-radius: 5px;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+.jumbotron {
+   font-size: 20px;
+   padding: 60px;
+   background-color: #00c8eb;
+   text-align: center;
+   color: white;
+   z-index: -1;
+}
+
+.jumbotron h1 {
+   font-family: 'Pacifico', sans-serif;
+   letter-spacing: 5px;
+}
+
+.jumbotron p {
+   letter-spacing: 3px;
+}
+
+nav li {
+   display: inline;
+   list-style-type: none;
+   margin-right: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+   #content,
+   aside {
+       width: 100%;
+       padding: 0;
+   }
+}
+
+.menu-toggle {
+   display: none;
+   flex-direction: column;
+   height: 20px;
+   justify-content: space-between;
+   position: relative;
+}
+
+.menu-toggle input {
+   position: absolute;
+   width: 40px;
+   height: 28px;
+   opacity: 0;
+   left: -10px;
+   top: -5px;
+   cursor: pointer;
+   z-index: 2;
+}
+
+.menu-toggle span {
+   display: block;
+   width: 28px;
+   height: 3px;
+   background-color: white;
+   border-radius: 3px;
+   transition: all 0.5s;
+}
+
+.menu-toggle span:nth-child(2) {
+   transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+   transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+   transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+   transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+   transform: scale(0);
+   opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+   nav ul {
+      width: 50%;
+   }
+}
+
+@media screen and (max-width: 576px) {
+   .menu-toggle {
+      display: flex;
+   }
+   nav ul {
+      position: absolute;
+      background-color: #00a2c6;
+      right: 0;
+      top: 0;
+      width: 80%;
+      height: 100vh;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: all 1s;
+      opacity: 0;
+   }
+}
+
+nav ul.slide {
+   opacity: 1;
+   transform: translateX(0);
+}
+
+header {
+   display: inline;
+}
